@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gespa Asesoría · Gestoría en Benidorm</title>
+<meta name="description" content="Gespa, asesoría fiscal, contable y laboral en Benidorm. Autónomos, pymes, nóminas y declaración de la renta con trato directo. Av. Alfonso Puchades 21.">
+<meta name="robots" content="noindex"> <!-- DEMO: quitar al publicar -->
+<meta property="og:title" content="Gespa Asesoría · Gestoría en Benidorm">
+<meta property="og:description" content="Asesoría fiscal, contable y laboral en Benidorm, con trato directo.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts/fonts.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "Gestoría Gespa",
+  "alternateName": "Gespa Asesoría",
+  "description": "Asesoría fiscal, contable y laboral en Benidorm: autónomos, pymes, nóminas y declaración de la renta.",
+  "image": "img/hero.jpg",
+  "telephone": "+34637083993",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Alfonso Puchades, 21, local 4",
+    "addressLocality": "Benidorm",
+    "postalCode": "03502",
+    "addressRegion": "Alicante",
+    "addressCountry": "ES"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "14:30" }
+  ],
+  "sameAs": ["https://www.google.com/maps/search/?api=1&query=Gestoria+Gespa+Benidorm"],
+  "priceRange": "€€"
+}
+</script>
+<style>
+/* ===== Tokens (lenguaje Rolex: blanco, gris muy claro, un color de marca, mayúsculas espaciadas) ===== */
+:root{
+  --bg:#ffffff; --bg2:#f4f4f5; --bg3:#e9e9ec;
+  --txt:#212121; --txt2:#444; --muted:#6f6f74; --line:#e2e2e6;
+  --acc:#1f3f8f; --acc2:#2a4fae;
+  --wa:#25d366; --wa-txt:#062b18;
+  --r:22px;
+  --ease:cubic-bezier(.23,1,.32,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font:400 18px/1.6 'Jakarta',system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--txt);background:var(--bg);-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.03em;line-height:1.05}
+p{margin:0}
+.contenedor{width:min(1200px,100% - 3rem);margin-inline:auto}
+:focus-visible{outline:2px solid var(--acc2);outline-offset:3px}
+.icono{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.icono.relleno{fill:currentColor;stroke:none}
+
+/* Sobretítulo, titular, cuerpo: la tríada de Rolex */
+.sobre{font-size:.8rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.titular{font-size:clamp(2rem,4.2vw,3.6rem);letter-spacing:-.03em;line-height:1.08;margin:18px 0 22px}
+.cuerpo{font-size:clamp(1.05rem,1.35vw,1.2rem);line-height:1.65;color:var(--txt2);max-width:52ch}
+.cuerpo + .cuerpo{margin-top:1em}
+.mas{display:inline-flex;align-items:center;gap:.4em;margin-top:26px;color:var(--acc);font-weight:600;text-decoration:none;font-size:.95rem;letter-spacing:.02em}
+.mas::after{content:"›";font-size:1.35em;line-height:1;transition:transform .5s var(--ease)}
+@media (hover:hover) and (pointer:fine){.mas:hover{text-decoration:underline}.mas:hover::after{transform:translateX(3px)}}
+
+/* Botones: pastilla, mayúsculas espaciadas, hover suave */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;padding:1.05em 1.9em;border-radius:999px;font-weight:600;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;line-height:1;text-decoration:none;border:1px solid transparent;cursor:pointer;
+     transition:transform .5s var(--ease),box-shadow .5s var(--ease),background .3s ease,border-color .3s ease}
+.btn:active{transform:scale(.97)}
+.btn-acc{background:var(--acc);color:#fff}
+.btn-wa{background:var(--wa);color:var(--wa-txt)}
+.btn-linea{background:transparent;color:var(--txt);border-color:rgba(33,33,33,.28)}
+.btn-blanco{background:#fff;color:var(--txt)}
+.btn-cristal{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.45)}
+@media (hover:hover) and (pointer:fine){
+  .btn:hover{transform:translateY(-2px)}
+  .btn-acc:hover{background:var(--acc2);box-shadow:0 16px 36px rgba(31,63,143,.25)}
+  .btn-wa:hover{box-shadow:0 16px 36px rgba(37,211,102,.25)}
+  .btn-linea:hover{border-color:var(--txt)}
+  .btn-cristal:hover{background:rgba(255,255,255,.24)}
+}
+
+/* Cabecera fina, marca centrada como Rolex */
+.top{position:fixed;inset:0 0 auto 0;z-index:60;height:64px;display:flex;align-items:center;transition:background .4s ease,box-shadow .4s ease,color .3s ease}
+.top .contenedor{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+.top,.top a{color:#fff}
+.top.solida{background:rgba(255,255,255,.86);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 1px 0 var(--line)}
+.top.solida,.top.solida a{color:var(--txt)}
+.marca{justify-self:center;font-weight:700;letter-spacing:-.03em;font-size:1.35rem;text-decoration:none}
+.marca b{color:#9db8ff}
+.top.solida .marca b{color:var(--acc)}
+.nav{display:none;gap:26px;justify-self:start}
+.nav a{text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.85;transition:opacity .3s ease}
+@media (hover:hover){.nav a:hover{opacity:1}}
+@media (min-width:960px){.nav{display:flex}}
+.top-acciones{justify-self:end;display:flex;gap:8px}
+.top .btn{padding:.8em 1.2em;font-size:.72rem}
+.top .btn-tel{display:none}
+@media (min-width:600px){.top .btn-tel{display:inline-flex}}
+
+/* Portada: vídeo, sobretítulo espaciado, nombre gigante */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden;color:#fff;padding:140px 0 120px;background:radial-gradient(120% 90% at 50% 115%,#6b7f9f 0%,#33445f 40%,#131c2e 100%)}
+.hero::before{content:"";position:absolute;inset:-30%;background:radial-gradient(38% 38% at 32% 32%,rgba(255,255,255,.16),transparent 62%);animation:luz 16s ease-in-out infinite alternate;pointer-events:none}
+@keyframes luz{to{transform:translate(18%,14%)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(10,16,30,.35) 100%)}
+.hero .contenedor{position:relative;z-index:2;max-width:980px}
+.hero .sobre{color:rgba(255,255,255,.8);margin-bottom:22px}
+.hero h1{font-size:clamp(4rem,13vw,10.5rem);letter-spacing:-.05em;line-height:.9}
+.hero h1 b{color:#9db8ff}
+.hero .sub{font-size:clamp(1.05rem,1.6vw,1.3rem);font-weight:300;color:rgba(255,255,255,.88);max-width:44ch;margin:28px auto 38px;line-height:1.55}
+.hero .acciones{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.hero .valoracion{display:inline-flex;align-items:center;gap:8px;margin-top:34px;color:rgba(255,255,255,.9);font-size:.92rem;text-decoration:none;letter-spacing:.04em}
+.hero .valoracion .estrella{color:#ffd166}
+.hero .estado{display:block;margin-top:10px;color:rgba(255,255,255,.7);font-size:.9rem}
+.hero .estado:empty{display:none}
+.hero .estado.abierto{color:#8ff0b3}
+@supports (animation-timeline: scroll()){
+  .hero .contenedor{animation:heroSale linear both;animation-timeline:scroll(root);animation-range:0 80vh}
+  @keyframes heroSale{to{transform:translateY(-60px);opacity:0}}
+}
+
+/* Intro (como la entrada de Rolex): párrafo grande centrado sobre degradado suave */
+.introduccion{background:linear-gradient(180deg,#fff 0%,var(--bg2) 100%);text-align:center;padding:clamp(90px,12vw,150px) 0}
+.introduccion p{font-size:clamp(1.35rem,2.6vw,2.15rem);font-weight:300;line-height:1.35;letter-spacing:-.015em;max-width:30ch;margin:0 auto;color:var(--txt)}
+.introduccion p b{font-weight:600}
+
+/* RollerLoop: fila de vídeos en bucle */
+.roller{padding:clamp(70px,9vw,120px) 0;background:var(--bg2)}
+.roller .cab{text-align:center;margin-bottom:44px}
+.roller-pista{display:grid;gap:16px;grid-auto-flow:column;grid-auto-columns:minmax(78%,1fr);overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 1.5rem 12px;scrollbar-width:none}
+.roller-pista::-webkit-scrollbar{display:none}
+@media (min-width:900px){.roller-pista{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);overflow:visible;padding:0}}
+.pieza{scroll-snap-align:center;text-decoration:none}
+.pieza .marco{aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:0 20px 50px rgba(20,20,30,.08)}
+.pieza video,.pieza img{width:100%;height:100%;object-fit:cover;transform:scale(1.001);transition:transform 1.4s var(--ease)}
+@media (hover:hover) and (pointer:fine){.pieza:hover video,.pieza:hover img{transform:scale(1.05)}}
+.pieza .pie{padding:18px 6px 0}
+.pieza .pie .sobre{font-size:.72rem;margin-bottom:6px;color:var(--acc)}
+.pieza .pie h3{font-size:1.15rem;letter-spacing:-.02em;font-weight:600}
+
+/* DualGrid: texto junto a imagen, alternando lado */
+.dual{padding:clamp(80px,11vw,140px) 0}
+.dual .contenedor{display:grid;gap:44px;align-items:center}
+@media (min-width:900px){.dual .contenedor{grid-template-columns:1fr 1fr;gap:90px}.dual.invertido .texto{order:2}}
+.dual .imagen{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--bg2)}
+.dual .imagen img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.8s var(--ease)}
+@media (hover:hover){.dual .imagen:hover img{transform:scale(1)}}
+.dual.gris{background:var(--bg2)}
+
+/* Servicios: lista sobria en tres columnas */
+.lista{padding:clamp(80px,11vw,140px) 0}
+.lista .cab{text-align:center;max-width:720px;margin:0 auto 60px}
+.lista .cab .cuerpo{margin-inline:auto}
+.columnas{display:grid;gap:0 40px}
+@media (min-width:760px){.columnas{grid-template-columns:repeat(3,1fr)}}
+.item{padding:26px 0;border-top:1px solid var(--line);text-decoration:none;display:block;transition:color .3s ease}
+.item .sobre{font-size:.72rem;color:var(--acc)}
+.item h3{font-size:1.35rem;letter-spacing:-.025em;margin:10px 0 8px;font-weight:600}
+.item p{color:var(--muted);font-size:.98rem;line-height:1.5}
+@media (hover:hover) and (pointer:fine){.item:hover h3{color:var(--acc)}}
+
+/* Bloque a pantalla completa */
+.bloque-foto{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;padding:120px 0}
+.bloque-foto img,.bloque-foto video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.bloque-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,12,28,.2),rgba(6,12,28,.62))}
+.bloque-foto .contenedor{position:relative;z-index:2;max-width:820px}
+.bloque-foto .sobre{color:rgba(255,255,255,.82)}
+.bloque-foto .titular{color:#fff;text-shadow:0 10px 60px rgba(0,0,0,.4)}
+.bloque-foto .cuerpo{color:rgba(255,255,255,.92);margin-inline:auto;text-shadow:0 2px 20px rgba(0,0,0,.5)}
+.bloque-foto .mas{color:#fff}
+
+/* Opiniones */
+.opiniones{background:var(--bg2);padding:clamp(80px,11vw,140px) 0}
+.opiniones .cab{max-width:720px;margin:0 auto 56px;text-align:center}
+.opiniones .cab .cuerpo{margin-inline:auto}
+.quotes{display:grid;gap:14px}
+@media (min-width:900px){.quotes{grid-template-columns:repeat(3,1fr)}}
+.quote{background:#fff;border-radius:var(--r);padding:34px 30px;display:flex;flex-direction:column;gap:18px}
+.quote .estrellas{color:#f5b301;display:flex;gap:2px}
+.quote blockquote{margin:0;font-size:1.05rem;font-weight:300;line-height:1.55;flex:1}
+.quote footer{color:var(--muted);font-size:.9rem}
+
+/* Contacto */
+.contacto{padding:clamp(80px,11vw,140px) 0}
+.contacto .cab{text-align:center;margin-bottom:56px}
+.info-grid{display:grid;gap:14px}
+@media (min-width:960px){.info-grid{grid-template-columns:1fr 1fr 1.2fr}}
+.tarj{background:var(--bg2);border-radius:var(--r);padding:32px}
+.tarj h3{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:20px}
+.tabla{width:100%;border-collapse:collapse}
+.tabla td{padding:10px 0;border-top:1px solid var(--line);font-size:.98rem}
+.tabla tr:first-child td{border-top:0}
+.tabla td:last-child{text-align:right;color:var(--muted)}
+.tabla tr.hoy td{font-weight:600;color:var(--txt)}
+.tabla tr.hoy td:first-child::after{content:" · hoy";color:var(--acc);font-weight:500}
+.estado{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-weight:500;font-size:.95rem;margin-top:16px}
+.estado:empty{display:none}
+.estado::before{content:"";width:8px;height:8px;border-radius:50%;background:#a1a1a6}
+.estado.abierto{color:#1c7c3e}.estado.abierto::before{background:#2ecc71}
+.datos{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:14px}
+.datos li{display:flex;gap:12px;align-items:flex-start}
+.datos .icono{color:var(--acc);margin-top:.25em}
+.datos a{font-weight:500}
+.mapa{position:relative;border-radius:var(--r);overflow:hidden;background:var(--bg3);min-height:320px}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mapa-aviso{position:absolute;inset:0;display:grid;place-content:center;text-align:center;padding:24px;gap:14px}
+.mapa-aviso p{color:var(--muted);max-width:30ch;font-size:.95rem}
+.mapa-aviso .btn{justify-self:center}
+
+/* Cierre y pie */
+.cierre{text-align:center;background:var(--bg2);padding:clamp(90px,12vw,150px) 0}
+.cierre .cuerpo{margin:0 auto 34px}
+.cierre .acciones{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.pie{border-top:1px solid var(--line);padding:70px 0 120px}
+@media (min-width:960px){.pie{padding-bottom:60px}}
+.pie-grid{display:grid;gap:40px}
+@media (min-width:900px){.pie-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+.pie .marca-grande{font-size:clamp(3rem,8vw,6rem);font-weight:700;letter-spacing:-.05em;line-height:.9}
+.pie .marca-grande b{color:var(--acc)}
+.pie h4{margin:0 0 14px;font-size:.75rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.pie ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:.98rem}
+.pie ul a{text-decoration:none}
+@media (hover:hover){.pie ul a:hover{color:var(--acc)}}
+.pie-bajo{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+.pie-bajo a{color:inherit}
+
+/* Barra móvil */
+.barra-movil{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+@media (min-width:960px){.barra-movil{display:none}}
+
+/* Scroll-reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-hijos > *{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal-hijos.visible > *{opacity:1;transform:none}
+.reveal-hijos.visible > :nth-child(2){transition-delay:.1s}
+.reveal-hijos.visible > :nth-child(3){transition-delay:.2s}
+.reveal-hijos.visible > :nth-child(4){transition-delay:.3s}
+.reveal-hijos.visible > :nth-child(5){transition-delay:.4s}
+.reveal-hijos.visible > :nth-child(6){transition-delay:.5s}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal,.reveal-hijos > *{opacity:1;transform:none;transition:none}
+  .hero .contenedor{animation:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 512 512"><path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"/></symbol>
+  <symbol id="i-estrella" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-reloj" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="contenedor">
+    <nav class="nav" aria-label="Secciones">
+      <a href="#servicios">Servicios</a>
+      <a href="#quienes">Quiénes somos</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="marca" href="#inicio">Gespa<b>.</b></a>
+    <div class="top-acciones">
+      <a class="btn btn-cristal btn-tel" href="tel:+34637083993">Llamar</a>
+      <a class="btn btn-wa" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener"><svg class="icono relleno"><use href="#i-wa"/></svg> WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- Portada -->
+<section class="hero" id="inicio">
+  <div class="contenedor">
+    <div class="sobre">Asesoría fiscal, contable y laboral · Benidorm</div>
+    <h1>Gespa<b>.</b></h1>
+    <p class="sub">Asesoría de trato directo en Benidorm. Sus impuestos, sus nóminas y su renta, presentados en plazo por quien conoce su caso.</p>
+    <div class="acciones">
+      <a class="btn btn-acc" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      <a class="btn btn-cristal" href="tel:+34637083993">637 08 39 93</a>
+    </div>
+    <a class="valoracion" href="https://www.google.com/maps/search/?api=1&query=Gestoria+Gespa+Benidorm" target="_blank" rel="noopener"><svg class="icono relleno estrella"><use href="#i-estrella"/></svg> 5,0 en Google · 33 reseñas</a>
+    <span class="estado" data-estado aria-live="polite"></span>
+  </div>
+</section>
+
+<!-- Introducción -->
+<section class="introduccion">
+  <div class="contenedor reveal">
+    <p>Una asesoría de trato directo. Una manera de trabajar en la que cada plazo, cada modelo y cada nómina tienen nombre y responsable. Una oficina luminosa en el centro de Benidorm y la tranquilidad de saber que todo está presentado, y a tiempo.</p>
+  </div>
+</section>
+
+<!-- Fila de vídeos en bucle -->
+<section class="roller" id="servicios">
+  <div class="contenedor">
+    <div class="cab reveal">
+      <div class="sobre">El trabajo de cada día</div>
+      <h2 class="titular">Lo que ocurre cada mes, sin que usted tenga que pensarlo.</h2>
+    </div>
+    <div class="roller-pista reveal-hijos">
+      <a class="pieza" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20n%C3%B3minas%20y%20contratos" target="_blank" rel="noopener">
+        <div class="marco"><video class="bucle" muted loop playsinline preload="none" poster="img/clip-firma.jpg" data-src="img/clip-firma.mp4" aria-hidden="true"></video></div>
+        <div class="pie"><div class="sobre">Laboral</div><h3>Contratos y firmas</h3></div>
+      </a>
+      <a class="pieza" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20aut%C3%B3nomos" target="_blank" rel="noopener">
+        <div class="marco"><video class="bucle" muted loop playsinline preload="none" poster="img/clip-teclado.jpg" data-src="img/clip-teclado.mp4" aria-hidden="true"></video></div>
+        <div class="pie"><div class="sobre">Fiscal</div><h3>Presentación telemática</h3></div>
+      </a>
+      <a class="pieza" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20contabilidad" target="_blank" rel="noopener">
+        <div class="marco"><video class="bucle" muted loop playsinline preload="none" poster="img/clip-calculo.jpg" data-src="img/clip-calculo.mp4" aria-hidden="true"></video></div>
+        <div class="pie"><div class="sobre">Contable</div><h3>Cálculo y revisión</h3></div>
+      </a>
+      <a class="pieza" href="https://www.google.com/maps/dir/?api=1&destination=Avinguda+Alfonso+Puchades+21%2C+Benidorm" target="_blank" rel="noopener">
+        <div class="marco"><video class="bucle" muted loop playsinline preload="none" poster="img/benidorm-poster.jpg" data-src="img/benidorm-movil.mp4" aria-hidden="true"></video></div>
+        <div class="pie"><div class="sobre">Benidorm</div><h3>Av. Alfonso Puchades, 21</h3></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Quiénes somos -->
+<section class="dual" id="quienes">
+  <div class="contenedor">
+    <div class="texto reveal">
+      <div class="sobre">Trato directo</div>
+      <h2 class="titular">Le atiende quien lleva sus asuntos.</h2>
+      <p class="cuerpo">En Gespa le atiende directamente Annamaria Nagy Farcas, titular de la asesoría. Conoce su caso desde el primer día y lo sigue personalmente: qué hay que presentar, cuándo y con qué documentación.</p>
+      <p class="cuerpo">Sus clientes lo resumen en sus reseñas con dos palabras que se repiten: seguimiento y profesionalidad. Algunos llevan ocho años con ella; otros llegaron después de pasar por varias gestorías.</p>
+      <a class="mas" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener">Hacer una consulta</a>
+    </div>
+    <div class="imagen reveal"><img src="img/hero.jpg" alt="Oficina de Gespa Asesoría en Benidorm" width="1104" height="1470" loading="lazy" style="object-position:center 60%"></div>
+  </div>
+</section>
+
+<!-- Autónomos y pymes -->
+<section class="dual invertido gris">
+  <div class="contenedor">
+    <div class="texto reveal">
+      <div class="sobre">Autónomos y pymes</div>
+      <h2 class="titular">El calendario fiscal, bajo control.</h2>
+      <p class="cuerpo">Alta de actividad, facturación, impuestos trimestrales, contabilidad y obligaciones de la sociedad. Cada modelo se prepara con antelación y se presenta en plazo, y se le avisa de lo que toca antes de que toque.</p>
+      <p class="cuerpo">Un autónomo que empieza y una pyme con años de recorrido necesitan lo mismo: que nadie se olvide de una fecha. Ese es, exactamente, el trabajo.</p>
+      <a class="mas" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20aut%C3%B3nomos" target="_blank" rel="noopener">Consultar para mi actividad</a>
+    </div>
+    <div class="imagen reveal"><img src="img/s-autonomos.jpg" alt="" width="1200" height="1800" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- Laboral -->
+<section class="dual">
+  <div class="contenedor">
+    <div class="texto reveal">
+      <div class="sobre">Laboral y nóminas</div>
+      <h2 class="titular">Contratos y nóminas, cada mes.</h2>
+      <p class="cuerpo">Altas y bajas en la Seguridad Social, contratos, nóminas y comunicaciones, gestionados con el rigor que exige tener personas a su cargo. Cada mes, a tiempo, sin sorpresas para usted ni para su plantilla.</p>
+      <a class="mas" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20n%C3%B3minas%20y%20contratos" target="_blank" rel="noopener">Consultar sobre mi plantilla</a>
+    </div>
+    <div class="imagen reveal"><img src="img/s-laboral.jpg" alt="" width="1200" height="1800" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- Renta -->
+<section class="dual invertido gris">
+  <div class="contenedor">
+    <div class="texto reveal">
+      <div class="sobre">Declaración de la renta</div>
+      <h2 class="titular">Una fecha que conviene tener en la agenda.</h2>
+      <p class="cuerpo">Cada primavera vuelve la declaración de la renta. En Gespa se prepara con calma, se revisa con usted y se presenta también cuando el plazo aprieta. Una de sus clientas lo cuenta en Google: la de sus padres se resolvió en muy poco tiempo, porque era una urgencia.</p>
+      <a class="mas" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20hacer%20la%20declaraci%C3%B3n%20de%20la%20renta" target="_blank" rel="noopener">Pedir cita para la renta</a>
+    </div>
+    <div class="imagen reveal"><img src="img/s-renta.jpg" alt="" width="1200" height="800" loading="lazy" style="aspect-ratio:auto"></div>
+  </div>
+</section>
+
+<!-- Todos los servicios -->
+<section class="lista">
+  <div class="contenedor">
+    <div class="cab reveal">
+      <div class="sobre">Servicios</div>
+      <h2 class="titular">Todo lo que una asesoría debe resolver.</h2>
+      <p class="cuerpo">Seis áreas, una sola persona responsable. Pulse la que le interese y escríbanos.</p>
+    </div>
+    <div class="columnas reveal-hijos">
+      <a class="item" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20aut%C3%B3nomos" target="_blank" rel="noopener"><div class="sobre">01</div><h3>Autónomos</h3><p>Alta, facturación e impuestos trimestrales.</p></a>
+      <a class="item" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20mi%20empresa" target="_blank" rel="noopener"><div class="sobre">02</div><h3>Empresas y pymes</h3><p>Contabilidad, impuestos y obligaciones de la sociedad.</p></a>
+      <a class="item" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20n%C3%B3minas%20y%20contratos" target="_blank" rel="noopener"><div class="sobre">03</div><h3>Laboral y nóminas</h3><p>Contratos, nóminas y Seguridad Social.</p></a>
+      <a class="item" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20hacer%20la%20declaraci%C3%B3n%20de%20la%20renta" target="_blank" rel="noopener"><div class="sobre">04</div><h3>Declaración de la renta</h3><p>Preparación, revisión y presentación.</p></a>
+      <a class="item" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20contabilidad" target="_blank" rel="noopener"><div class="sobre">05</div><h3>Contabilidad e impuestos</h3><p>Libros, modelos y plazos controlados.</p></a>
+      <a class="item" href="https://wa.me/34637083993?text=Hola%2C%20necesito%20hacer%20un%20tr%C3%A1mite" target="_blank" rel="noopener"><div class="sobre">06</div><h3>Trámites y documentación</h3><p>Gestiones con la administración, contratos y documentación.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- Benidorm -->
+<section class="bloque-foto" id="benidorm">
+  <video class="bucle" muted loop playsinline preload="none" poster="img/benidorm-poster.jpg" data-src="img/benidorm.mp4" data-src-movil="img/benidorm-movil.mp4" aria-hidden="true"></video>
+  <div class="contenedor reveal">
+    <div class="sobre">Benidorm</div>
+    <h2 class="titular">En la avenida Alfonso Puchades, 21.</h2>
+    <p class="cuerpo">Una oficina en el centro de Benidorm, abierta de lunes a viernes de 9:00 a 14:30. Puede escribir por WhatsApp a cualquier hora; se le responde en horario de oficina.</p>
+    <a class="mas" href="https://www.google.com/maps/dir/?api=1&destination=Avinguda+Alfonso+Puchades+21%2C+Benidorm" target="_blank" rel="noopener">Cómo llegar</a>
+  </div>
+</section>
+
+<!-- Opiniones -->
+<section class="opiniones" id="opiniones">
+  <div class="contenedor">
+    <div class="cab reveal">
+      <div class="sobre">Lo que dicen sus clientes</div>
+      <h2 class="titular">Cinco sobre cinco.</h2>
+      <p class="cuerpo">Treinta y tres reseñas en Google y una nota media de 5,0. Son opiniones públicas, escritas por clientes con nombre y apellidos; estas son tres de ellas.</p>
+    </div>
+    <div class="quotes reveal-hijos">
+      <article class="quote"><div class="estrellas" aria-label="5 estrellas"><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg></div><blockquote>“Ana es una profesional de los pies a la cabeza, en sus manos estoy totalmente tranquila y confiada que todo está controlado. Una persona y profesional excepcional.”</blockquote><footer>Eva López Martínez · reseña en Google</footer></article>
+      <article class="quote"><div class="estrellas" aria-label="5 estrellas"><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg></div><blockquote>“Excelente profesional. La atención y seguimiento de tus asuntos de 10. Después de 12 años de autónomo y pasar por 3 gestorías anteriores tuve la suerte de encontrar a Anna. Muy satisfecho de ser su cliente.”</blockquote><footer>Luis Benjamin Cornelio · reseña en Google</footer></article>
+      <article class="quote"><div class="estrellas" aria-label="5 estrellas"><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg></div><blockquote>“Trato muy profesional, buen seguimiento, amplio conocimiento y siempre disponible. Hacen un esfuerzo adicional por sus clientes. Después de 8 años todavía muy satisfecho! Annamaria es una profesional con corazón por sus clientes. Le agradecemos!”</blockquote><footer>Petra Janssens · reseña en Google</footer></article>
+    </div>
+    <div style="text-align:center;margin-top:36px" class="reveal"><a class="mas" href="https://www.google.com/maps/search/?api=1&query=Gestoria+Gespa+Benidorm" target="_blank" rel="noopener">Ver las 33 reseñas en Google</a></div>
+  </div>
+</section>
+
+<!-- Contacto -->
+<section class="contacto" id="contacto">
+  <div class="contenedor">
+    <div class="cab reveal">
+      <div class="sobre">Visítenos</div>
+      <h2 class="titular">Horario y contacto.</h2>
+    </div>
+    <div class="info-grid reveal-hijos">
+      <div class="tarj">
+        <h3>Horario</h3>
+        <table class="tabla" id="tabla-horario">
+          <tr data-dia="1" data-tramos="09:00-14:30"><td>Lunes</td><td>9:00–14:30</td></tr>
+          <tr data-dia="2" data-tramos="09:00-14:30"><td>Martes</td><td>9:00–14:30</td></tr>
+          <tr data-dia="3" data-tramos="09:00-14:30"><td>Miércoles</td><td>9:00–14:30</td></tr>
+          <tr data-dia="4" data-tramos="09:00-14:30"><td>Jueves</td><td>9:00–14:30</td></tr>
+          <tr data-dia="5" data-tramos="09:00-14:30"><td>Viernes</td><td>9:00–14:30</td></tr>
+          <tr data-dia="6" data-tramos=""><td>Sábado</td><td>Cerrado</td></tr>
+          <tr data-dia="7" data-tramos=""><td>Domingo</td><td>Cerrado</td></tr>
+        </table>
+        <span class="estado" data-estado aria-live="polite"></span>
+      </div>
+      <div class="tarj">
+        <h3>Contacto</h3>
+        <ul class="datos">
+          <li><svg class="icono"><use href="#i-pin"/></svg><span>Av. Alfonso Puchades, 21, local 4<br>03502 Benidorm (Alicante)</span></li>
+          <li><svg class="icono relleno"><use href="#i-tel"/></svg><span><a href="tel:+34637083993">637 08 39 93</a> · <a href="tel:+34865711407">865 711 407</a></span></li>
+          <li><svg class="icono relleno"><use href="#i-wa"/></svg><a href="https://wa.me/34637083993?text=Hola%2C%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener">Escribir por WhatsApp</a></li>
+          <li><svg class="icono"><use href="#i-reloj"/></svg><span>Lunes a viernes, 9:00–14:30</span></li>
+        </ul>
+        <a class="btn btn-linea" href="https://www.google.com/maps/dir/?api=1&destination=Avinguda+Alfonso+Puchades+21%2C+Benidorm" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+      <div class="mapa" id="mapa" data-src="https://maps.google.com/maps?q=Avinguda+Alfonso+Puchades+21%2C+Benidorm&z=17&output=embed">
+        <div class="mapa-aviso">
+          <p>El mapa es de Google y usa sus cookies. Se carga solo si lo pide.</p>
+          <button class="btn btn-blanco" type="button" id="cargar-mapa">Ver mapa</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cierre -->
+<section class="cierre">
+  <div class="contenedor reveal">
+    <div class="sobre">Primera consulta</div>
+    <h2 class="titular">Cuéntenos qué necesita.</h2>
+    <p class="cuerpo">Impuestos, alta de autónomo, nóminas o la renta. Escríbanos por WhatsApp o llámenos, y le diremos qué hace falta, qué plazos hay y cómo lo hacemos.</p>
+    <div class="acciones">
+      <a class="btn btn-acc" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      <a class="btn btn-linea" href="tel:+34637083993">637 08 39 93</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie-grid">
+      <div><div class="marca-grande">Gespa<b>.</b></div></div>
+      <div><h4>Servicios</h4><ul><li><a href="#servicios">Autónomos</a></li><li><a href="#servicios">Empresas y pymes</a></li><li><a href="#servicios">Laboral y nóminas</a></li><li><a href="#servicios">Declaración de la renta</a></li></ul></div>
+      <div><h4>Contacto</h4><ul><li>Av. Alfonso Puchades, 21, local 4</li><li>03502 Benidorm (Alicante)</li><li><a href="tel:+34637083993">637 08 39 93</a></li><li><a href="https://wa.me/34637083993" target="_blank" rel="noopener">WhatsApp</a></li></ul></div>
+      <div><h4>Horario</h4><ul><li>Lunes a viernes</li><li>9:00–14:30</li><li><a href="https://www.google.com/maps/search/?api=1&query=Gestoria+Gespa+Benidorm" target="_blank" rel="noopener">Ficha en Google</a></li></ul></div>
+    </div>
+    <div class="pie-bajo">
+      <span>© <span id="anio">2026</span> Gestoría Gespa S.L. · Benidorm</span>
+      <span><a href="aviso-legal.html">Aviso legal y privacidad</a> · Imágenes y vídeo: Pexels</span>
+    </div>
+  </div>
+</footer>
+
+<div class="barra-movil" aria-label="Contacto rápido">
+  <a class="btn btn-linea" href="tel:+34637083993"><svg class="icono relleno"><use href="#i-tel"/></svg> Llamar</a>
+  <a class="btn btn-wa" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener"><svg class="icono relleno"><use href="#i-wa"/></svg> WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var q=function(s,c){return (c||document).querySelector(s);};
+  var qa=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
+  var anio=q('#anio'); if(anio) anio.textContent=new Date().getFullYear();
+  var quieto = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Vídeos en bucle: se cargan y reproducen solo cuando entran en pantalla */
+  var bucles=qa('video.bucle');
+  if(bucles.length && !quieto && 'IntersectionObserver' in window){
+    var iov=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var el=e.target;
+        if(e.isIntersecting){
+          if(!el.getAttribute('src')){ var movil=el.getAttribute('data-src-movil'); el.src=(movil && window.innerWidth<800)?movil:el.getAttribute('data-src'); el.load(); }
+          var pr=el.play(); if(pr && pr.catch){ pr.catch(function(){}); }
+        } else if(el.getAttribute('src')){ el.pause(); }
+      });
+    },{rootMargin:'200px 0px'});
+    bucles.forEach(function(el){ iov.observe(el); });
+  }
+
+  /* Cabecera de cristal al bajar */
+  var top=q('.top');
+  function cab(){ if(top) top.classList.toggle('solida', window.scrollY>40); }
+  cab(); window.addEventListener('scroll',cab,{passive:true});
+
+  /* Scroll-reveal */
+  var objetivos=qa('.reveal, .reveal-hijos');
+  if('IntersectionObserver' in window && !quieto){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -10% 0px',threshold:.05});
+    objetivos.forEach(function(el){ io.observe(el); });
+  } else { objetivos.forEach(function(el){ el.classList.add('visible'); }); }
+
+  /* Estado "Abierto ahora / Cerrado" con hora de España */
+  var DIAS=['lunes','martes','miércoles','jueves','viernes','sábado','domingo'];
+  var SEM={Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6,Sun:7};
+  var filas=qa('#tabla-horario tr[data-dia]'), horario={};
+  filas.forEach(function(tr){
+    horario[+tr.getAttribute('data-dia')]=(tr.getAttribute('data-tramos')||'').split(',').filter(Boolean).map(function(t){
+      return t.split('-').map(function(h){var p=h.split(':');return (+p[0])*60+(+p[1]||0);});
+    });
+  });
+  var partes={};
+  try{ new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).forEach(function(p){partes[p.type]=p.value;}); }catch(e){}
+  var dia=SEM[partes.weekday], ahora=(+partes.hour)*60+(+partes.minute);
+  if(dia && !isNaN(ahora)){
+    filas.forEach(function(tr){ if(+tr.getAttribute('data-dia')===dia) tr.classList.add('hoy'); });
+    var hh=function(m){return Math.floor(m/60)+':'+('0'+(m%60)).slice(-2);};
+    var txt='', abierto=false, hoy=horario[dia]||[];
+    for(var i=0;i<hoy.length;i++){
+      if(ahora>=hoy[i][0] && ahora<hoy[i][1]){abierto=true;txt='Abierto ahora · cierra a las '+hh(hoy[i][1]);break;}
+      if(ahora<hoy[i][0]){txt='Cerrado · abre a las '+hh(hoy[i][0]);break;}
+    }
+    if(!txt){ for(var d=1;d<=7;d++){ var n=((dia-1+d)%7)+1, tramos=horario[n]||[]; if(tramos.length){txt='Cerrado · abre '+(d===1?'mañana':'el '+DIAS[n-1])+' a las '+hh(tramos[0][0]);break;} } }
+    if(txt){ qa('[data-estado]').forEach(function(el){el.textContent=txt;el.classList.add(abierto?'abierto':'cerrado');}); }
+  }
+
+  /* Mapa de Google al pulsar */
+  var btn=q('#cargar-mapa');
+  if(btn){ btn.addEventListener('click',function(){
+    var cont=q('#mapa'), f=document.createElement('iframe');
+    f.src=cont.getAttribute('data-src'); f.title='Mapa de Google con la ubicación'; f.loading='lazy';
+    f.setAttribute('allowfullscreen',''); f.setAttribute('referrerpolicy','no-referrer-when-downgrade');
+    cont.innerHTML=''; cont.appendChild(f);
+  }); }
+})();
+</script>
+</body>
+</html>
