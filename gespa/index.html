@@ -60,7 +60,8 @@ p{margin:0}
 /* Sobretítulo, titular, cuerpo: la tríada de Rolex */
 .sobre{font-size:.8rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 .titular{font-size:clamp(2rem,4.2vw,3.6rem);letter-spacing:-.03em;line-height:1.08;margin:18px 0 22px}
-.cuerpo{font-size:clamp(1.05rem,1.35vw,1.2rem);line-height:1.65;color:var(--txt2);max-width:52ch}
+.cuerpo{font-size:clamp(1.08rem,1.4vw,1.28rem);line-height:1.65;color:var(--txt2);max-width:50ch;font-weight:300}
+.cuerpo b{font-weight:600;color:var(--txt)}
 .cuerpo + .cuerpo{margin-top:1em}
 .mas{display:inline-flex;align-items:center;gap:.4em;margin-top:26px;color:var(--acc);font-weight:600;text-decoration:none;font-size:.95rem;letter-spacing:.02em}
 .mas::after{content:"›";font-size:1.35em;line-height:1;transition:transform .5s var(--ease)}
@@ -142,7 +143,7 @@ p{margin:0}
 .pieza .pie h3{font-size:1.15rem;letter-spacing:-.02em;font-weight:600}
 
 /* DualGrid: texto junto a imagen, alternando lado */
-.dual{padding:clamp(80px,11vw,140px) 0}
+.dual{padding:clamp(100px,13vw,180px) 0}
 .dual .contenedor{display:grid;gap:44px;align-items:center}
 @media (min-width:900px){.dual .contenedor{grid-template-columns:1fr 1fr;gap:90px}.dual.invertido .texto{order:2}}
 .dual .imagen{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--bg2)}
@@ -151,7 +152,7 @@ p{margin:0}
 .dual.gris{background:var(--bg2)}
 
 /* Servicios: lista sobria en tres columnas */
-.lista{padding:clamp(80px,11vw,140px) 0}
+.lista{padding:clamp(100px,13vw,180px) 0}
 .lista .cab{text-align:center;max-width:720px;margin:0 auto 60px}
 .lista .cab .cuerpo{margin-inline:auto}
 .columnas{display:grid;gap:0 40px}
@@ -173,7 +174,7 @@ p{margin:0}
 .bloque-foto .mas{color:#fff}
 
 /* Opiniones */
-.opiniones{background:var(--bg2);padding:clamp(80px,11vw,140px) 0}
+.opiniones{background:var(--bg2);padding:clamp(100px,13vw,180px) 0}
 .opiniones .cab{max-width:720px;margin:0 auto 56px;text-align:center}
 .opiniones .cab .cuerpo{margin-inline:auto}
 .quotes{display:grid;gap:14px}
@@ -294,7 +295,7 @@ p{margin:0}
 <!-- Introducción -->
 <section class="introduccion">
   <div class="contenedor reveal">
-    <p>Una asesoría de trato directo. Una manera de trabajar en la que cada plazo, cada modelo y cada nómina tienen nombre y responsable. Una oficina luminosa en el centro de Benidorm y la tranquilidad de saber que todo está presentado, y a tiempo.</p>
+    <p>Una asesoría de trato directo en el centro de Benidorm. Una manera de trabajar en la que cada plazo, cada modelo y cada nómina tienen nombre y responsable.</p>
   </div>
 </section>
 
@@ -303,7 +304,7 @@ p{margin:0}
   <div class="contenedor">
     <div class="cab reveal">
       <div class="sobre">El trabajo de cada día</div>
-      <h2 class="titular">Lo que ocurre cada mes, sin que usted tenga que pensarlo.</h2>
+      <h2 class="titular">Lo que hacemos cada mes.</h2>
     </div>
     <div class="roller-pista reveal-hijos">
       <a class="pieza" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20n%C3%B3minas%20y%20contratos" target="_blank" rel="noopener">
@@ -332,7 +333,7 @@ p{margin:0}
     <div class="texto reveal">
       <div class="sobre">Trato directo</div>
       <h2 class="titular">Le atiende quien lleva sus asuntos.</h2>
-      <p class="cuerpo">En Gespa le atiende directamente Annamaria Nagy Farcas, titular de la asesoría. Conoce su caso desde el primer día y lo sigue personalmente: qué hay que presentar, cuándo y con qué documentación.</p>
+      <p class="cuerpo">En Gespa le atiende directamente Annamaria, titular de la asesoría. Conoce su caso desde el primer día y lo sigue personalmente: qué hay que presentar, cuándo y con qué documentación.</p>
       <p class="cuerpo">Sus clientes lo resumen en sus reseñas con dos palabras que se repiten: seguimiento y profesionalidad. Algunos llevan ocho años con ella; otros llegaron después de pasar por varias gestorías.</p>
       <a class="mas" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener">Hacer una consulta</a>
     </div>
@@ -347,7 +348,7 @@ p{margin:0}
       <div class="sobre">Autónomos y pymes</div>
       <h2 class="titular">El calendario fiscal, bajo control.</h2>
       <p class="cuerpo">Alta de actividad, facturación, impuestos trimestrales, contabilidad y obligaciones de la sociedad. Cada modelo se prepara con antelación y se presenta en plazo, y se le avisa de lo que toca antes de que toque.</p>
-      <p class="cuerpo">Un autónomo que empieza y una pyme con años de recorrido necesitan lo mismo: que nadie se olvide de una fecha. Ese es, exactamente, el trabajo.</p>
+      <p class="cuerpo">Tanto si acaba de darse de alta como si lleva años con su pyme, el objetivo es el mismo: que ningún plazo se pase por alto.</p>
       <a class="mas" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20aut%C3%B3nomos" target="_blank" rel="noopener">Consultar para mi actividad</a>
     </div>
     <div class="imagen reveal"><img src="img/s-autonomos.jpg" alt="" width="1200" height="1800" loading="lazy"></div>
@@ -360,7 +361,7 @@ p{margin:0}
     <div class="texto reveal">
       <div class="sobre">Laboral y nóminas</div>
       <h2 class="titular">Contratos y nóminas, cada mes.</h2>
-      <p class="cuerpo">Altas y bajas en la Seguridad Social, contratos, nóminas y comunicaciones, gestionados con el rigor que exige tener personas a su cargo. Cada mes, a tiempo, sin sorpresas para usted ni para su plantilla.</p>
+      <p class="cuerpo">Altas y bajas en la Seguridad Social, contratos, nóminas y comunicaciones, gestionados a tiempo cada mes, sin errores que afecten a su plantilla.</p>
       <a class="mas" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20n%C3%B3minas%20y%20contratos" target="_blank" rel="noopener">Consultar sobre mi plantilla</a>
     </div>
     <div class="imagen reveal"><img src="img/s-laboral.jpg" alt="" width="1200" height="1800" loading="lazy"></div>
@@ -373,7 +374,7 @@ p{margin:0}
     <div class="texto reveal">
       <div class="sobre">Declaración de la renta</div>
       <h2 class="titular">Una fecha que conviene tener en la agenda.</h2>
-      <p class="cuerpo">Cada primavera vuelve la declaración de la renta. En Gespa se prepara con calma, se revisa con usted y se presenta también cuando el plazo aprieta. Una de sus clientas lo cuenta en Google: la de sus padres se resolvió en muy poco tiempo, porque era una urgencia.</p>
+      <p class="cuerpo">La declaración de la renta se prepara con antelación cuando es posible y se resuelve con urgencia cuando el plazo aprieta. Una de sus clientas lo cuenta en Google: la de sus padres se resolvió en muy poco tiempo porque era una emergencia.</p>
       <a class="mas" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20hacer%20la%20declaraci%C3%B3n%20de%20la%20renta" target="_blank" rel="noopener">Pedir cita para la renta</a>
     </div>
     <div class="imagen reveal"><img src="img/s-renta.jpg" alt="" width="1200" height="800" loading="lazy" style="aspect-ratio:auto"></div>
@@ -416,12 +417,12 @@ p{margin:0}
     <div class="cab reveal">
       <div class="sobre">Lo que dicen sus clientes</div>
       <h2 class="titular">Cinco sobre cinco.</h2>
-      <p class="cuerpo">Treinta y tres reseñas en Google y una nota media de 5,0. Son opiniones públicas, escritas por clientes con nombre y apellidos; estas son tres de ellas.</p>
+      <p class="cuerpo">Treinta y tres reseñas en Google y una nota media de 5,0. Son opiniones públicas de clientes con nombre y apellidos; estas son tres de ellas.</p>
     </div>
     <div class="quotes reveal-hijos">
-      <article class="quote"><div class="estrellas" aria-label="5 estrellas"><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg></div><blockquote>“Ana es una profesional de los pies a la cabeza, en sus manos estoy totalmente tranquila y confiada que todo está controlado. Una persona y profesional excepcional.”</blockquote><footer>Eva López Martínez · reseña en Google</footer></article>
-      <article class="quote"><div class="estrellas" aria-label="5 estrellas"><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg></div><blockquote>“Excelente profesional. La atención y seguimiento de tus asuntos de 10. Después de 12 años de autónomo y pasar por 3 gestorías anteriores tuve la suerte de encontrar a Anna. Muy satisfecho de ser su cliente.”</blockquote><footer>Luis Benjamin Cornelio · reseña en Google</footer></article>
-      <article class="quote"><div class="estrellas" aria-label="5 estrellas"><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg></div><blockquote>“Trato muy profesional, buen seguimiento, amplio conocimiento y siempre disponible. Hacen un esfuerzo adicional por sus clientes. Después de 8 años todavía muy satisfecho! Annamaria es una profesional con corazón por sus clientes. Le agradecemos!”</blockquote><footer>Petra Janssens · reseña en Google</footer></article>
+      <article class="quote"><div class="estrellas" aria-label="5 estrellas"><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg></div><blockquote>“Ana es una profesional de los pies a la cabeza, en sus manos estoy totalmente tranquila y confiada que todo está controlado. Una persona y profesional excepcional.”</blockquote><footer>Eva L. · reseña en Google</footer></article>
+      <article class="quote"><div class="estrellas" aria-label="5 estrellas"><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg></div><blockquote>“Excelente profesional. La atención y seguimiento de tus asuntos de 10. Después de 12 años de autónomo y pasar por 3 gestorías anteriores tuve la suerte de encontrar a Anna. Muy satisfecho de ser su cliente.”</blockquote><footer>Luis B. · reseña en Google</footer></article>
+      <article class="quote"><div class="estrellas" aria-label="5 estrellas"><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg></div><blockquote>“Trato muy profesional, buen seguimiento, amplio conocimiento y siempre disponible. Hacen un esfuerzo adicional por sus clientes. Después de 8 años todavía muy satisfecho! Annamaria es una profesional con corazón por sus clientes. Le agradecemos!”</blockquote><footer>Petra J. · reseña en Google</footer></article>
     </div>
     <div style="text-align:center;margin-top:36px" class="reveal"><a class="mas" href="https://www.google.com/maps/search/?api=1&query=Gestoria+Gespa+Benidorm" target="_blank" rel="noopener">Ver las 33 reseñas en Google</a></div>
   </div>
