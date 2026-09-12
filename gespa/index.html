@@ -150,9 +150,9 @@ p{margin:0}
 .nomina .grupo{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
 .nomina .grupo:first-child{margin-top:0}
 .nomina .linea{display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px;font-size:1.02rem;color:var(--txt2);padding:4px 0}
-.nomina .barra{height:10px;border-radius:999px;background:var(--bg3);width:var(--w)}
+.nomina .imp{font-variant-numeric:tabular-nums;font-weight:500;color:var(--txt)}
 .nomina .linea.total{border-top:1px solid var(--line);margin-top:8px;padding-top:16px;font-weight:600;color:var(--txt);font-size:1.1rem}
-.nomina .linea.total .barra{background:var(--acc)}
+.nomina .linea.total .imp{color:var(--acc);font-size:1.2rem;font-weight:700}
 .renta-num{font-size:clamp(4rem,7vw,6.5rem);font-weight:700;letter-spacing:-.05em;line-height:.9}
 .renta-num small{display:block;font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:8px}
 .pasos-renta{display:grid;gap:12px;margin:26px 0 0;position:relative;padding-left:22px}
@@ -380,18 +380,18 @@ p{margin:0}
     </div>
     <div class="imagen sin-foto reveal">
       <div class="grafico" aria-label="Estructura de una nómina">
-        <div class="cabecera"><span class="sobre">Nómina · <span data-mes-nombre>mes</span></span><span class="anio">Mensual</span></div>
+        <div class="cabecera"><span class="sobre">Nómina · <span data-mes-nombre>mes</span></span><span class="anio">Ejemplo</span></div>
         <div class="nomina">
           <div class="grupo">Devengos</div>
-          <div class="linea"><span>Salario base</span><span class="barra" style="--w:160px"></span></div>
-          <div class="linea"><span>Complementos</span><span class="barra" style="--w:64px"></span></div>
-          <div class="linea"><span>Prorrata de pagas extra</span><span class="barra" style="--w:76px"></span></div>
+          <div class="linea"><span>Salario base</span><span class="imp">1.400,00 €</span></div>
+          <div class="linea"><span>Complementos</span><span class="imp">150,00 €</span></div>
+          <div class="linea"><span>Prorrata de pagas extra</span><span class="imp">258,33 €</span></div>
           <div class="grupo">Deducciones</div>
-          <div class="linea"><span>Retención de IRPF</span><span class="barra" style="--w:54px"></span></div>
-          <div class="linea"><span>Seguridad Social del trabajador</span><span class="barra" style="--w:40px"></span></div>
-          <div class="linea total"><span>Líquido a percibir</span><span class="barra" style="--w:150px"></span></div>
+          <div class="linea"><span>Retención de IRPF (12 %)</span><span class="imp">−217,00 €</span></div>
+          <div class="linea"><span>Seguridad Social del trabajador (6,48 %)</span><span class="imp">−117,18 €</span></div>
+          <div class="linea total"><span>Líquido a percibir</span><span class="imp">1.474,15 €</span></div>
         </div>
-        <p class="nota">Contratos, altas y bajas comunicados en plazo. Las nóminas, cada mes, sin errores que afecten a la plantilla.</p>
+        <p class="nota">Cifras orientativas de ejemplo. Contratos, altas y bajas comunicados en plazo; las nóminas, cada mes, sin errores que afecten a la plantilla.</p>
       </div>
     </div>
   </div>
