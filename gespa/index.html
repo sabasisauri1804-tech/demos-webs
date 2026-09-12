@@ -128,19 +128,40 @@ p{margin:0}
 .introduccion p{font-size:clamp(1.35rem,2.6vw,2.15rem);font-weight:300;line-height:1.35;letter-spacing:-.015em;max-width:30ch;margin:0 auto;color:var(--txt)}
 .introduccion p b{font-weight:600}
 
-/* RollerLoop: fila de vídeos en bucle */
-.roller{padding:clamp(70px,9vw,120px) 0;background:var(--bg2)}
-.roller .cab{text-align:center;margin-bottom:44px}
-.roller-pista{display:grid;gap:16px;grid-auto-flow:column;grid-auto-columns:minmax(78%,1fr);overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 1.5rem 12px;scrollbar-width:none}
-.roller-pista::-webkit-scrollbar{display:none}
-@media (min-width:900px){.roller-pista{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);overflow:visible;padding:0}}
-.pieza{scroll-snap-align:center;text-decoration:none}
-.pieza .marco{aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:0 20px 50px rgba(20,20,30,.08)}
-.pieza video,.pieza img{width:100%;height:100%;object-fit:cover;transform:scale(1.001);transition:transform 1.4s var(--ease)}
-@media (hover:hover) and (pointer:fine){.pieza:hover video,.pieza:hover img{transform:scale(1.05)}}
-.pieza .pie{padding:18px 6px 0}
-.pieza .pie .sobre{font-size:.72rem;margin-bottom:6px;color:var(--acc)}
-.pieza .pie h3{font-size:1.15rem;letter-spacing:-.02em;font-weight:600}
+/* Gráficos a medida (calendario fiscal, nómina, renta) */
+.grafico{aspect-ratio:4/5;border-radius:var(--r);background:#fff;border:1px solid var(--line);box-shadow:0 30px 70px rgba(20,20,30,.07);padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.blanco .grafico{background:var(--bg2);box-shadow:none}
+.grafico .cabecera{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.grafico .cabecera .sobre{font-size:.7rem}
+.grafico .cabecera .anio{font-size:.8rem;color:var(--muted);font-weight:600;letter-spacing:.1em}
+.filas-cal{display:grid;gap:0;margin:26px 0}
+.fila-cal{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.fila-cal:last-child{border-bottom:1px solid var(--line)}
+.fila-cal .dia{font-size:clamp(1.8rem,2.6vw,2.4rem);font-weight:700;letter-spacing:-.04em;line-height:1;min-width:2.2ch}
+.fila-cal .dia small{display:block;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.fila-cal .que{font-size:.98rem;line-height:1.35}
+.fila-cal .que small{display:block;color:var(--muted);font-size:.82rem;margin-top:2px}
+.fila-cal .estado-cal{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.fila-cal.proximo .dia,.fila-cal.proximo .que{color:var(--acc)}
+.fila-cal.proximo .estado-cal{color:#fff;background:var(--acc);padding:6px 10px;border-radius:999px}
+.fila-cal.pasado{opacity:.45}
+.grafico .nota{font-size:.85rem;color:var(--muted);line-height:1.45}
+.nomina{display:grid;gap:14px;margin:26px 0}
+.nomina .linea{display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px;font-size:.95rem;color:var(--txt2)}
+.nomina .barra{height:10px;border-radius:999px;background:var(--bg3);width:var(--w)}
+.nomina .linea.total{border-top:1px solid var(--line);padding-top:14px;font-weight:600;color:var(--txt)}
+.nomina .linea.total .barra{background:var(--acc)}
+.renta-num{font-size:clamp(4rem,7vw,6.5rem);font-weight:700;letter-spacing:-.05em;line-height:.9}
+.renta-num small{display:block;font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.pasos-renta{display:grid;gap:12px;margin:26px 0 0;position:relative;padding-left:22px}
+.pasos-renta::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--bg3);border-radius:2px}
+.pasos-renta li{list-style:none;position:relative;font-size:.95rem;color:var(--txt2)}
+.pasos-renta li::before{content:"";position:absolute;left:-22px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--bg3)}
+.pasos-renta li.activo{color:var(--txt);font-weight:600}
+.pasos-renta li.activo::before{background:var(--acc);border-color:var(--acc)}
+.pasos-renta li b{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:2px}
+.dual .imagen.sin-foto{aspect-ratio:auto;background:none;overflow:visible;border-radius:0}
+.titulo-seccion{text-align:center;padding:clamp(80px,10vw,130px) 0 0}
 
 /* DualGrid: texto junto a imagen, alternando lado */
 .dual{padding:clamp(100px,13vw,180px) 0}
@@ -299,33 +320,13 @@ p{margin:0}
   </div>
 </section>
 
-<!-- Fila de vídeos en bucle -->
-<section class="roller" id="servicios">
-  <div class="contenedor">
-    <div class="cab reveal">
-      <div class="sobre">El trabajo de cada día</div>
-      <h2 class="titular">Lo que hacemos cada mes.</h2>
-    </div>
-    <div class="roller-pista reveal-hijos">
-      <a class="pieza" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20n%C3%B3minas%20y%20contratos" target="_blank" rel="noopener">
-        <div class="marco"><video class="bucle" muted loop playsinline preload="none" poster="img/clip-firma.jpg" data-src="img/clip-firma.mp4" aria-hidden="true"></video></div>
-        <div class="pie"><div class="sobre">Laboral</div><h3>Contratos y firmas</h3></div>
-      </a>
-      <a class="pieza" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20aut%C3%B3nomos" target="_blank" rel="noopener">
-        <div class="marco"><video class="bucle" muted loop playsinline preload="none" poster="img/clip-teclado.jpg" data-src="img/clip-teclado.mp4" aria-hidden="true"></video></div>
-        <div class="pie"><div class="sobre">Fiscal</div><h3>Presentación telemática</h3></div>
-      </a>
-      <a class="pieza" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20contabilidad" target="_blank" rel="noopener">
-        <div class="marco"><video class="bucle" muted loop playsinline preload="none" poster="img/clip-calculo.jpg" data-src="img/clip-calculo.mp4" aria-hidden="true"></video></div>
-        <div class="pie"><div class="sobre">Contable</div><h3>Cálculo y revisión</h3></div>
-      </a>
-      <a class="pieza" href="https://www.google.com/maps/dir/?api=1&destination=Avinguda+Alfonso+Puchades+21%2C+Benidorm" target="_blank" rel="noopener">
-        <div class="marco"><video class="bucle" muted loop playsinline preload="none" poster="img/benidorm-poster.jpg" data-src="img/benidorm-movil.mp4" aria-hidden="true"></video></div>
-        <div class="pie"><div class="sobre">Benidorm</div><h3>Av. Alfonso Puchades, 21</h3></div>
-      </a>
-    </div>
+<!-- Título de la serie de bloques -->
+<div class="titulo-seccion" id="servicios">
+  <div class="contenedor reveal">
+    <div class="sobre">El trabajo de cada día</div>
+    <h2 class="titular">Lo que hacemos cada mes.</h2>
   </div>
-</section>
+</div>
 
 <!-- Quiénes somos -->
 <section class="dual" id="quienes">
@@ -351,7 +352,18 @@ p{margin:0}
       <p class="cuerpo">Tanto si acaba de darse de alta como si lleva años con su pyme, el objetivo es el mismo: que ningún plazo se pase por alto.</p>
       <a class="mas" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20aut%C3%B3nomos" target="_blank" rel="noopener">Consultar para mi actividad</a>
     </div>
-    <div class="imagen reveal"><img src="img/s-autonomos.jpg" alt="" width="1200" height="1800" loading="lazy"></div>
+    <div class="imagen sin-foto reveal">
+      <div class="grafico" id="calendario" aria-label="Calendario fiscal trimestral">
+        <div class="cabecera"><span class="sobre">Calendario fiscal · trimestral</span><span class="anio" data-anio>2026</span></div>
+        <div class="filas-cal">
+          <div class="fila-cal" data-mes="1" data-dia="30"><div class="dia">30<small>ene</small></div><div class="que">IVA y pagos a cuenta del 4.º trimestre<small>Modelos 303 y 130 · resumen anual</small></div><span class="estado-cal">4T</span></div>
+          <div class="fila-cal" data-mes="4" data-dia="20"><div class="dia">20<small>abr</small></div><div class="que">IVA y pagos a cuenta del 1.er trimestre<small>Modelos 303 y 130</small></div><span class="estado-cal">1T</span></div>
+          <div class="fila-cal" data-mes="7" data-dia="20"><div class="dia">20<small>jul</small></div><div class="que">IVA y pagos a cuenta del 2.º trimestre<small>Modelos 303 y 130</small></div><span class="estado-cal">2T</span></div>
+          <div class="fila-cal" data-mes="10" data-dia="20"><div class="dia">20<small>oct</small></div><div class="que">IVA y pagos a cuenta del 3.er trimestre<small>Modelos 303 y 130</small></div><span class="estado-cal">3T</span></div>
+        </div>
+        <p class="nota">Cada modelo se prepara antes del plazo. El siguiente vencimiento aparece marcado con la fecha de hoy.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -364,7 +376,19 @@ p{margin:0}
       <p class="cuerpo">Altas y bajas en la Seguridad Social, contratos, nóminas y comunicaciones, gestionados a tiempo cada mes, sin errores que afecten a su plantilla.</p>
       <a class="mas" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20n%C3%B3minas%20y%20contratos" target="_blank" rel="noopener">Consultar sobre mi plantilla</a>
     </div>
-    <div class="imagen reveal"><img src="img/s-laboral.jpg" alt="" width="1200" height="1800" loading="lazy"></div>
+    <div class="imagen sin-foto reveal">
+      <div class="grafico" aria-label="Estructura de una nómina">
+        <div class="cabecera"><span class="sobre">Nómina · <span data-mes-nombre>mes</span></span><span class="anio">Mensual</span></div>
+        <div class="nomina">
+          <div class="linea"><span>Salario base</span><span class="barra" style="--w:150px"></span></div>
+          <div class="linea"><span>Prorrata de pagas extra</span><span class="barra" style="--w:70px"></span></div>
+          <div class="linea"><span>Retención de IRPF</span><span class="barra" style="--w:52px"></span></div>
+          <div class="linea"><span>Cotización a la Seguridad Social</span><span class="barra" style="--w:40px"></span></div>
+          <div class="linea total"><span>Líquido a percibir</span><span class="barra" style="--w:120px"></span></div>
+        </div>
+        <p class="nota">Contratos, altas y bajas comunicados en plazo. Las nóminas, cada mes, sin errores que afecten a la plantilla.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -377,7 +401,17 @@ p{margin:0}
       <p class="cuerpo">La declaración de la renta se prepara con antelación cuando es posible y se resuelve con urgencia cuando el plazo aprieta. Una de sus clientas lo cuenta en Google: la de sus padres se resolvió en muy poco tiempo porque era una emergencia.</p>
       <a class="mas" href="https://wa.me/34637083993?text=Hola%2C%20quiero%20hacer%20la%20declaraci%C3%B3n%20de%20la%20renta" target="_blank" rel="noopener">Pedir cita para la renta</a>
     </div>
-    <div class="imagen reveal"><img src="img/s-renta.jpg" alt="" width="1200" height="800" loading="lazy" style="aspect-ratio:auto"></div>
+    <div class="imagen sin-foto reveal">
+      <div class="grafico" aria-label="Campaña de la renta">
+        <div class="cabecera"><span class="sobre">Campaña de la renta</span><span class="anio">Abril – junio</span></div>
+        <div class="renta-num">30<small>de junio · último día</small></div>
+        <ul class="pasos-renta">
+          <li class="activo"><b>Abril</b>Se abre la campaña. Se reúne la documentación.</li>
+          <li><b>Mayo</b>Se prepara y se revisa con usted.</li>
+          <li><b>Junio</b>Se presenta antes del cierre.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -525,6 +559,18 @@ p{margin:0}
     },{rootMargin:'200px 0px'});
     bucles.forEach(function(el){ iov.observe(el); });
   }
+
+  /* Calendario fiscal: marcar el próximo vencimiento con la fecha de hoy */
+  var hoyF=new Date(), anioEl=q('[data-anio]'); if(anioEl) anioEl.textContent=hoyF.getFullYear();
+  var filasCal=qa('.fila-cal'), marcado=false;
+  filasCal.forEach(function(f){
+    var m=+f.getAttribute('data-mes'), d=+f.getAttribute('data-dia');
+    var fecha=new Date(hoyF.getFullYear(), m-1, d, 23, 59);
+    if(fecha<hoyF){ f.classList.add('pasado'); }
+    else if(!marcado){ f.classList.add('proximo'); f.querySelector('.estado-cal').textContent='Próximo'; marcado=true; }
+  });
+  if(!marcado && filasCal.length){ filasCal.forEach(function(f){f.classList.remove('pasado');}); filasCal[0].classList.add('proximo'); filasCal[0].querySelector('.estado-cal').textContent='Próximo'; }
+  var mesEl=q('[data-mes-nombre]'); if(mesEl){ mesEl.textContent=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][hoyF.getMonth()]; }
 
   /* Cabecera de cristal al bajar */
   var top=q('.top');
