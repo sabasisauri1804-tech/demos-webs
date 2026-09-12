@@ -129,7 +129,7 @@ p{margin:0}
 .introduccion p b{font-weight:600}
 
 /* Gráficos a medida (calendario fiscal, nómina, renta) */
-.grafico{aspect-ratio:4/5;border-radius:var(--r);background:#fff;border:1px solid var(--line);box-shadow:0 30px 70px rgba(20,20,30,.07);padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.grafico{border-radius:var(--r);background:#fff;border:1px solid var(--line);box-shadow:0 30px 70px rgba(20,20,30,.07);padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
 .blanco .grafico{background:var(--bg2);box-shadow:none}
 .grafico .cabecera{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .grafico .cabecera .sobre{font-size:.7rem}
@@ -146,10 +146,12 @@ p{margin:0}
 .fila-cal.proximo .estado-cal{color:#fff;background:var(--acc);padding:6px 10px;border-radius:999px}
 .fila-cal.pasado{opacity:.45}
 .grafico .nota{font-size:.85rem;color:var(--muted);line-height:1.45}
-.nomina{display:grid;gap:14px;margin:26px 0}
-.nomina .linea{display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px;font-size:.95rem;color:var(--txt2)}
+.nomina{display:grid;gap:12px;margin:26px 0 22px}
+.nomina .grupo{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+.nomina .grupo:first-child{margin-top:0}
+.nomina .linea{display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px;font-size:1.02rem;color:var(--txt2);padding:4px 0}
 .nomina .barra{height:10px;border-radius:999px;background:var(--bg3);width:var(--w)}
-.nomina .linea.total{border-top:1px solid var(--line);padding-top:14px;font-weight:600;color:var(--txt)}
+.nomina .linea.total{border-top:1px solid var(--line);margin-top:8px;padding-top:16px;font-weight:600;color:var(--txt);font-size:1.1rem}
 .nomina .linea.total .barra{background:var(--acc)}
 .renta-num{font-size:clamp(4rem,7vw,6.5rem);font-weight:700;letter-spacing:-.05em;line-height:.9}
 .renta-num small{display:block;font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:8px}
@@ -380,11 +382,14 @@ p{margin:0}
       <div class="grafico" aria-label="Estructura de una nómina">
         <div class="cabecera"><span class="sobre">Nómina · <span data-mes-nombre>mes</span></span><span class="anio">Mensual</span></div>
         <div class="nomina">
-          <div class="linea"><span>Salario base</span><span class="barra" style="--w:150px"></span></div>
-          <div class="linea"><span>Prorrata de pagas extra</span><span class="barra" style="--w:70px"></span></div>
-          <div class="linea"><span>Retención de IRPF</span><span class="barra" style="--w:52px"></span></div>
-          <div class="linea"><span>Cotización a la Seguridad Social</span><span class="barra" style="--w:40px"></span></div>
-          <div class="linea total"><span>Líquido a percibir</span><span class="barra" style="--w:120px"></span></div>
+          <div class="grupo">Devengos</div>
+          <div class="linea"><span>Salario base</span><span class="barra" style="--w:160px"></span></div>
+          <div class="linea"><span>Complementos</span><span class="barra" style="--w:64px"></span></div>
+          <div class="linea"><span>Prorrata de pagas extra</span><span class="barra" style="--w:76px"></span></div>
+          <div class="grupo">Deducciones</div>
+          <div class="linea"><span>Retención de IRPF</span><span class="barra" style="--w:54px"></span></div>
+          <div class="linea"><span>Seguridad Social del trabajador</span><span class="barra" style="--w:40px"></span></div>
+          <div class="linea total"><span>Líquido a percibir</span><span class="barra" style="--w:150px"></span></div>
         </div>
         <p class="nota">Contratos, altas y bajas comunicados en plazo. Las nóminas, cada mes, sin errores que afecten a la plantilla.</p>
       </div>
