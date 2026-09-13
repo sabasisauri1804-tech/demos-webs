@@ -161,6 +161,7 @@ p{margin:0}
 .dual .contenedor{display:grid;gap:44px;align-items:center}
 @media (min-width:900px){.dual .contenedor{grid-template-columns:1fr 1fr;gap:90px}.dual.invertido .texto{order:2}}
 .dual .imagen{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--bg2)}
+.dual .imagen.apaisada{aspect-ratio:3/2}
 .dual .imagen.sin-foto{aspect-ratio:auto;background:none;overflow:visible;border-radius:0}
 .dual .imagen img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.8s var(--ease)}
 @media (hover:hover){.dual .imagen:hover img{transform:scale(1)}}
@@ -421,14 +422,16 @@ p{margin:0}
   </div>
 </section>
 
-<!-- Bloque a pantalla completa: su logo -->
-<section class="bloque-foto" id="benidorm">
-  <img src="img/3.jpg" alt="" aria-hidden="true" width="1290" height="848" loading="lazy">
-  <div class="contenedor reveal">
-    <div class="sobre">Benidorm</div>
-    <h2 class="titular">En la calle Marqués de Comillas, 4.</h2>
-    <p class="cuerpo">En pleno centro de Benidorm, de lunes a viernes de 8:00 a 16:00. Con cada consulta, una hora de parking.</p>
-    <a class="mas" href="https://www.google.com/maps/dir/?api=1&destination=Marqu%C3%A9s+de+Comillas+4%2C+Benidorm" target="_blank" rel="noopener">Cómo llegar</a>
+<!-- Bloque texto + foto de su logo (la foto entera, sin texto encima) -->
+<section class="dual gris" id="benidorm">
+  <div class="contenedor">
+    <div class="texto reveal">
+      <div class="sobre">Benidorm</div>
+      <h2 class="titular">En la calle Marqués de Comillas, 4.</h2>
+      <p class="cuerpo">En pleno centro de Benidorm, de lunes a viernes de 8:00 a 16:00. Con cada consulta, una hora de parking.</p>
+      <a class="mas" href="https://www.google.com/maps/dir/?api=1&destination=Marqu%C3%A9s+de+Comillas+4%2C+Benidorm" target="_blank" rel="noopener">Cómo llegar</a>
+    </div>
+    <div class="imagen apaisada reveal"><img src="img/3.jpg" alt="Pared de la recepción con el logo de La Clínica de Marina" width="1290" height="856" loading="lazy"></div>
   </div>
 </section>
 
