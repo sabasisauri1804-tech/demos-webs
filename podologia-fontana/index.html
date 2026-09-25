@@ -91,6 +91,8 @@ p{margin:0}
 .hero .valoracion .estrella{color:#f5b301}
 .hero .estado{display:block;margin-top:8px;color:var(--muted);font-size:.92rem}
 .hero .estado:empty{display:none}
+.hero .caser{display:block;margin-top:14px;font-size:.95rem;color:var(--txt2)}
+.hero .caser b{color:var(--marino);font-weight:600}
 .hero .entra{opacity:0;transform:translateY(18px);animation:entra 1s var(--ease) forwards}
 .hero .entra:nth-child(2){animation-delay:.1s}.hero .entra:nth-child(3){animation-delay:.2s}.hero .entra:nth-child(4){animation-delay:.3s}.hero .entra:nth-child(5){animation-delay:.4s}.hero .entra:nth-child(6){animation-delay:.5s}
 @keyframes entra{to{opacity:1;transform:none}}
@@ -210,6 +212,7 @@ p{margin:0}
   <div class="contenedor">
     <a class="marca" href="#inicio"><svg style="color:var(--azul)"><use href="#i-pie"/></svg>Podología Fontana</a>
     <nav class="nav" aria-label="Secciones">
+      <a href="#consulta">Consulta</a>
       <a href="#pisada">Estudio de la pisada</a>
       <a href="#plantillas">Plantillas</a>
       <a href="#servicios">Servicios</a>
@@ -237,6 +240,7 @@ p{margin:0}
     </div>
     <a class="valoracion entra" href="https://www.google.com/maps/search/?api=1&query=Podolog%C3%ADa+Fontana+Alicante" target="_blank" rel="noopener"><svg class="icono relleno estrella"><use href="#i-estrella"/></svg> 4,7 en Google · 121 reseñas</a>
     <span class="estado entra" data-estado aria-live="polite"></span>
+    <span class="caser entra"><b>Centro del cuadro médico de Caser.</b> Si tienes seguro de Caser, dilo al pedir cita.</span>
   </div>
 </section>
 <div class="banda"><img src="img/consulta.jpg" alt="Consulta de Podología Fontana: mesa, sillón de podología y cristalera con el logo" width="1800" height="1350" fetchpriority="high"></div>
@@ -245,17 +249,31 @@ p{margin:0}
 <!-- Introducción -->
 <section class="introduccion">
   <div class="contenedor">
-    <p>Una consulta de podología en Playa de San Juan con reseñas en Google desde hace ocho años. Lo que más repiten sus pacientes: puntualidad, limpieza y que Esteban explica lo que tienes y lo que va a hacer.</p>
+    <p>Una consulta de podología en Playa de San Juan con reseñas en Google desde hace ocho años. Lo que más se repite en sus reseñas: puntualidad, limpieza y que Esteban explica lo que tienes y lo que va a hacer.</p>
+  </div>
+</section>
+
+<!-- Bloque 0: lo de cada día (texto + foto sillón) -->
+<section class="dual" id="consulta">
+  <div class="contenedor">
+    <div class="texto">
+      <div class="sobre">Lo de cada día</div>
+      <h2 class="titular">Callos, durezas y uñas encarnadas.</h2>
+      <p class="cuerpo">La mayoría de las visitas son esto: un callo que duele al andar, una dureza, una uña encarnada o un papiloma. Se trata en la misma consulta, con cita, y se te explica qué tienes y qué se va a hacer.</p>
+      <p class="cuerpo">Si tienes seguro de Caser, dilo al pedir la cita: la consulta está en su cuadro médico.</p>
+      <a class="mas" href="https://wa.me/34689189798?text=Hola%2C%20quiero%20cita%20para%20callos%2C%20durezas%20o%20una%20u%C3%B1a%20encarnada" target="_blank" rel="noopener">Cita para callos, durezas o uñas</a>
+    </div>
+    <div class="imagen"><img src="img/sillon.jpg" alt="Sillón de podología de la consulta" width="1400" height="1050" loading="lazy" style="object-position:center 40%"></div>
   </div>
 </section>
 
 <!-- Bloque 1: estudio de la pisada (texto + foto moldes) -->
-<section class="dual gris" id="pisada">
+<section class="dual gris invertido" id="pisada">
   <div class="contenedor">
     <div class="texto">
       <div class="sobre">Estudio de la pisada</div>
       <h2 class="titular">Cada pie deja una huella distinta.</h2>
-      <p class="cuerpo">El estudio computerizado de la pisada mide cómo apoyas y cómo caminas, y de ahí sale la plantilla: una para cada pie, no una talla para todos. Sirve para dolores de pie, de rodilla o de espalda que empiezan en cómo pisas, y para deportistas.</p>
+      <p class="cuerpo">El estudio computerizado de la pisada mide cómo apoyas y cómo caminas, y de ahí sale una plantilla hecha para tu pie. Sirve para dolores de pie, de rodilla o de espalda que empiezan en cómo pisas, y para deportistas.</p>
       <p class="cuerpo">En la foto, la impresión de dos pies antes de fabricar sus plantillas.</p>
       <a class="mas" href="https://wa.me/34689189798?text=Hola%2C%20quiero%20cita%20para%20un%20estudio%20de%20la%20pisada" target="_blank" rel="noopener">Cita para un estudio de la pisada</a>
     </div>
@@ -264,7 +282,7 @@ p{margin:0}
 </section>
 
 <!-- Bloque 2: plantillas (gráfico pasos) -->
-<section class="dual invertido" id="plantillas">
+<section class="dual" id="plantillas">
   <div class="contenedor">
     <div class="texto">
       <div class="sobre">Plantillas y siliconas a medida</div>
@@ -288,12 +306,12 @@ p{margin:0}
 </section>
 
 <!-- Bloque 3: la consulta (texto + foto local) -->
-<section class="dual gris">
+<section class="dual gris invertido">
   <div class="contenedor">
     <div class="texto">
       <div class="sobre">La consulta</div>
       <h2 class="titular">En el Centro Comercial Fontana.</h2>
-      <p class="cuerpo">Esteban Rodríguez, podólogo, y Laura en recepción. Un local a pie de calle en el centro comercial y una consulta que sus pacientes describen como impecable.</p>
+      <p class="cuerpo">Esteban Rodríguez, podólogo, y Laura en recepción. Un local a pie de calle en el centro comercial y una consulta que las reseñas describen como impecable.</p>
       <p class="cuerpo">Centro del cuadro médico de Caser.</p>
       <a class="mas" href="https://www.google.com/maps/dir/?api=1&destination=Podolog%C3%ADa+Fontana%2C+Centro+Comercial+Fontana%2C+Alicante" target="_blank" rel="noopener">Cómo llegar</a>
     </div>
@@ -311,7 +329,7 @@ p{margin:0}
     </div>
     <div class="columnas">
       <a class="item" href="https://wa.me/34689189798?text=Hola%2C%20quiero%20cita%20para%20callos%20o%20durezas" target="_blank" rel="noopener"><h3>Callos y durezas</h3><p>Quiropodia: se eliminan y se busca por qué salen.</p></a>
-      <a class="item" href="https://wa.me/34689189798?text=Hola%2C%20quiero%20cita%20por%20una%20u%C3%B1a%20encarnada" target="_blank" rel="noopener"><h3>Uñas encarnadas</h3><p>Tratamiento y corte correcto para que no vuelva.</p></a>
+      <a class="item" href="https://wa.me/34689189798?text=Hola%2C%20quiero%20cita%20por%20una%20u%C3%B1a%20encarnada" target="_blank" rel="noopener"><h3>Uñas encarnadas</h3><p>Tratamiento y corte correcto de la uña.</p></a>
       <a class="item" href="https://wa.me/34689189798?text=Hola%2C%20quiero%20cita%20por%20un%20papiloma" target="_blank" rel="noopener"><h3>Papilomas</h3><p>Verrugas plantares.</p></a>
       <a class="item" href="https://wa.me/34689189798?text=Hola%2C%20quiero%20cita%20para%20un%20estudio%20de%20la%20pisada" target="_blank" rel="noopener"><h3>Estudio computerizado de la pisada</h3><p>Cómo apoyas y cómo andas.</p></a>
       <a class="item" href="https://wa.me/34689189798?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20plantillas%20a%20medida" target="_blank" rel="noopener"><h3>Plantillas a medida</h3><p>A partir de tu estudio y tu impresión.</p></a>
@@ -324,9 +342,9 @@ p{margin:0}
 <section class="opiniones" id="opiniones" style="background:var(--bg2)">
   <div class="contenedor">
     <div class="cab">
-      <div class="sobre">Lo que dicen sus pacientes</div>
+      <div class="sobre">Lo que dicen los pacientes</div>
       <h2 class="titular">121 reseñas en Google.</h2>
-      <p class="cuerpo">Una nota media de 4,7. Estas son tres, tal cual las escribieron.</p>
+      <p class="cuerpo">Una nota media de 4,7. Tres de ellas, literales:</p>
     </div>
     <div class="quotes">
       <article class="quote" style="background:#fff"><div class="estrellas" aria-label="5 estrellas"><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg><svg class="icono relleno"><use href="#i-estrella"/></svg></div><blockquote>“Hoy me han adelantado la cita por una urgencia, me han abierto un hueco en su agenda, no es la primera vez que vengo y la excelencia profesional de Esteban hace esta podología un 10/10”</blockquote><footer>Samuel S. · reseña en Google</footer></article>
@@ -370,7 +388,7 @@ p{margin:0}
       </div>
       <div class="mapa" id="mapa" data-src="https://maps.google.com/maps?q=Podolog%C3%ADa+Fontana%2C+Centro+Comercial+Fontana%2C+Alicante&z=17&output=embed">
         <div class="mapa-aviso">
-          <p>El mapa es de Google y usa sus cookies. Se carga solo si lo pides.</p>
+          <p>Pulsa para cargar el mapa de Google.</p>
           <button class="btn btn-blanco" type="button" id="cargar-mapa">Ver mapa</button>
         </div>
       </div>
